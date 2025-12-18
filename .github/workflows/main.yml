@@ -19,6 +19,10 @@ jobs:
       - name: login to docker hub
         run: sudo docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
 
+      - name: push image to docker hub
+        run: sudo docker push alarm_clock:latest
+
+
       - name: ssh into the instance
         run: |
           echo "${{ secrets.SSH_KEY }}" > sshKey.pem

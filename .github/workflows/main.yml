@@ -23,7 +23,7 @@ jobs:
         run: |
           echo "${{ secrets.SSH_KEY }}" > sshKey.pem
           sudo chmod 400 sshKey.pem
-          ssh -i "sshKey.pem" StrictHostKeyChecking=no ubuntu@34.203.9.51 "
+          ssh -i "sshKey.pem" -o StrictHostKeyChecking=no ubuntu@34.203.9.51 "
           sudo docker pull alarm_clock:latest
           sudo docker run -d -p 1234 --name alarmClock alarm_clock:latest
           "

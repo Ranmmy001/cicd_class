@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body, .wrapper, .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    /* min-width: 100vh; */
+    background-color: #4a98f7;
+}
+.wrapper{
+    /* width: 440px; */
+    width: 30vw;
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 30px 30px 38px;
+    margin-top: 50px;
+}
+.wrapper img{
+    max-width: 103px;
+}
+.wrapper h1{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0;
+}
+.wrapper .content{
+    width: 100%;
+    justify-content: space-between;
+}
+.wrapper .content.disable{
+    opacity: 0.6;
+    pointer-events: none;
+}
+.content .column{
+    border-radius: 5px;
+    padding: 0 10px;
+    border: 1px solid #999;
+    width: calc(100% / 3 - 5px);
+}
+.column select{
+    outline: none;
+    border: none;
+    height: 53px;
+    width: 100%;
+    font-size: 19px;
+    text-align: center;
+}
+.wrapper button{
+    width: 100%;
+    outline: none;
+    border: none;
+    margin-top: 28px;
+    font-size: 20px;
+    padding: 17px 0;
+    border-radius: 5px;
+    background: #4a98f7;
+    color: #fff;
+    cursor: pointer;
+}
+#setAlarm:hover{
+    transition: .5s;
+    background-color: deepskyblue;
+}
+select{
+    cursor: pointer;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: .3s;
+}
+
+a:hover{
+    color: rgb(228, 228, 228);
+    transform: translateY(-5px);
+}
+
+
+
+
+
+
+@media (max-width: 1115px) {
+    .wrapper{
+        width: 40vw;
+        position: absolute;
+        top: 10vh;
+    }
+}
+@media (max-width: 1045px) {
+    .wrapper{
+        width: 45vw;
+    }
+}
+@media (max-width: 927px) {
+    .wrapper{
+        width: 50vw;
+    }
+}
+@media (max-width: 830px) {
+    .wrapper{
+        width: 60vw;
+    }
+}
+@media (max-width: 710px) {
+    .wrapper{
+        width: 65vw;
+    }
+}
+@media (max-width: 650px) {
+    .wrapper{
+        width: 70vw;
+    }
+}
+@media (max-width: 598px) {
+    .wrapper{
+        width: 75vw;
+    }
+    
+}
+@media (max-width: 555px) {
+    .wrapper{
+        width: 80vw;
+    }
+    
+}
+@media (max-width: 526px) {
+    .wrapper{
+        width: 85vw;
+    }
+    
+}
+@media (max-width: 492px) {
+    .wrapper{
+        width: 95vw;
+    }
+    
+}
+@media (max-width: 416px) {
+    .wrapper{
+        width: 90vw;
+    }
+    .column select{
+        font-size: 10px;
+    }
+    .wrapper h1{
+        font-size: 30px;
+    }
+    
+}

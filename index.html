@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alarm clock</title>
+    <link rel="icon" href="./files/alarm_clock.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <img src="./files/alarm_clock.jpg" alt="clock">
+        <h1 class="write">04:20:30 PM</h1>
+        <div class="content">
+            <div class="column">
+                <select>
+                    <option value="HOUR" selected hidden>HOUR</option>
+                    <!-- <option value="HOUR">01</option>
+                    <option value="HOUR">02</option>
+                    <option value="HOUR">03</option> -->
+                </select>
+            </div>
+            <div class="column">
+                <select>
+                    <option value="MINUTE" selected hidden>MINUTE</option>
+                    <!-- <option value="HOUR">01</option>
+                    <option value="HOUR">02</option>
+                    <option value="HOUR">03</option> -->
+                </select>
+            </div>
+            <div class="column">
+                <select>
+                    <option value="AM/PM" selected hidden>AM/PM</option>
+                    <!-- <option value="AM">AM</option>
+                    <option value="PM">PM</option> -->
+                </select>
+            </div>
+        </div>
+        <button id="setAlarm">Set Alarm</button>
+    </div>
+    <div style="position: absolute; bottom: 20px; color: white;">Developed by <a href="https://www.linkedin.com/in/henry-okiyi-0246b6299/" target="_blank" rel="noopener noreferrer">Henry Okiyi</a></div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

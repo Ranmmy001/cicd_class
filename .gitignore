@@ -1,0 +1,21 @@
+# Terraform directories
+.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Terraform variables
+terraform.tfvars
+terraform.tfvars.json
+
+# Terraform lock file (optional: many teams commit this)
+.terraform.lock.hcl
+
+# Crash logs
+crash.log
+
+# SSH keys
+sshKey*
+*.pem
+*.key

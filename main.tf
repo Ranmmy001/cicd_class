@@ -28,6 +28,24 @@ resource "aws_security_group" "ssh" {
         cidr_blocks = ["0.0.0.0/0"]
     }
 }
+resource "aws_security_group" "http" {
+    name = "http"
+    description = "security group for http"
+    ingress {
+        description = "http for ingress"
+        protocol = "tcp"
+        from_port = 80
+        to_port = 80
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+    egress {
+        description = "http for egress"
+        protocol = "-1"
+        from_port = 0
+        to_port = 0
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+}
 resource "aws_key_pair" "sshKey" {
     key_name = "sshKey"
     public_key = file("${path.root}/sshKey.pub")
@@ -35,7 +53,7 @@ resource "aws_key_pair" "sshKey" {
 resource "aws_instance" "alarm_instance" {
     ami = "ami-053b0d53c279acc90"
     instance_type = "t3.micro"
-    vpc_security_group_ids = [aws_security_group.ssh.id]
+    vpc_security_group_ids = [aws_security_group.ssh.id, aws_security_group.http.id]
     key_name = aws_key_pair.sshKey.key_name
     
     tags = {

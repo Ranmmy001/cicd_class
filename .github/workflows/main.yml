@@ -29,7 +29,7 @@ jobs:
           sudo chmod 400 sshKey.pem
           ssh -i "sshKey.pem" -o StrictHostKeyChecking=no ubuntu@34.203.9.51 "
           sudo docker pull olaranmmy/alarm_clock:latest
-          sudo docker run -d -p 1234 --name alarmClock olaranmmy/alarm_clock:latest
+          sudo docker run -d -p 80 --name alarmClock olaranmmy/alarm_clock:latest
           sudo docker ps -a
           "
           

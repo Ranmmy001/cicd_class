@@ -1,34 +1,32 @@
 name: class_cicd
- 
-
 on:
   push:
     branches:
     - master
 
-  jobs:
+jobs:
     deployment:
-     runs-on: ubuntu latest
+      runs-on: ubuntu latest
 
-    steps:
+      steps:
 
-    - name: checkout to root directory
-      uses: actions/checkout@v4
-    
-    - name: build the docker image
-      run: sudo docker build -t alarm_clock:latest .
+      - name: checkout to root directory
+        uses: actions/checkout@v4
+      
+      - name: build the docker image
+        run: sudo docker build -t alarm_clock:latest .
 
-    - name: login to docker hub
-      run: sudo docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+      - name: login to docker hub
+        run: sudo docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
 
-    - name: ssh into the instance
-      run: |
-        ${{ secrets.SSH_KEY }} > sshKey.pem
-        sudo chmod 400 sshKey.pem
-        ssh -i "sshKey.pem" StrickHostKeyCheckinh=no ubuntu@34.203.9.51 "
-        sudo docker pull alarm_clock:latest
-        sudo docker run -d -p 1234 --name alarm_clock alarm_clock:latest
-        "
-        
+      - name: ssh into the instance
+        run: |
+          ${{ secrets.SSH_KEY }} > sshKey.pem
+          sudo chmod 400 sshKey.pem
+          ssh -i "sshKey.pem" StrickHostKeyCheckinh=no ubuntu@34.203.9.51 "
+          sudo docker pull alarm_clock:latest
+          sudo docker run -d -p 1234 --name alarm_clock alarm_clock:latest
+          "
+          
 
-    
+      

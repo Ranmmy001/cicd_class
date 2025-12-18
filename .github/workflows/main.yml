@@ -21,7 +21,7 @@ jobs:
 
       - name: ssh into the instance
         run: |
-          echo ${{ secrets.SSH_KEY }} > sshKey.pem
+          echo "${{ secrets.SSH_KEY }}" > sshKey.pem
           sudo chmod 400 sshKey.pem
           ssh -i "sshKey.pem" StrictHostKeyChecking=no ubuntu@34.203.9.51 "
           sudo docker pull alarm_clock:latest

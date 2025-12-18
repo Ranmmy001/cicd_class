@@ -14,13 +14,13 @@ jobs:
         uses: actions/checkout@v4
       
       - name: build the docker image
-        run: sudo docker build -t alarm_clock:latest .
+        run: sudo docker build -t olaranmmy/alarm_clock:latest .
 
       - name: login to docker hub
         run: sudo docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
 
       - name: push image to docker hub
-        run: sudo docker push alarm_clock:latest
+        run: sudo docker push olaranmmy/alarm_clock:latest
 
 
       - name: ssh into the instance
@@ -28,7 +28,7 @@ jobs:
           echo "${{ secrets.SSH_KEY }}" > sshKey.pem
           sudo chmod 400 sshKey.pem
           ssh -i "sshKey.pem" -o StrictHostKeyChecking=no ubuntu@34.203.9.51 "
-          sudo docker pull alarm_clock:latest
+          sudo docker pull olaranmmy/alarm_clock:latest
           sudo docker run -d -p 1234 --name alarmClock alarm_clock:latest
           "
           
